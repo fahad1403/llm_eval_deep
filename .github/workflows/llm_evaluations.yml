@@ -7,6 +7,19 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
       - name: Login to Confident
         env:
           CONFIDENT_API_KEY: 'EjWeKjTm6ck0iZWHFtah3ysuJ/3whu3YmPc17nPhjLw='
