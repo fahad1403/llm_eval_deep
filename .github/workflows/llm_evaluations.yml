@@ -1,0 +1,16 @@
+name: LLM Deployment Evaluations
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to Confident
+        env:
+          CONFIDENT_API_KEY: 'EjWeKjTm6ck0iZWHFtah3ysuJ/3whu3YmPc17nPhjLw='
+        run: poetry run deepeval login --confident-api-key "$CONFIDENT_API_KEY"
+
+      - name: Run deepeval tests
+        run: poetry run deepeval test run test_deep_eval.py
