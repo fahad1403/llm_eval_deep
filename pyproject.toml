@@ -2,7 +2,7 @@
 name = "llm_eval_deep"
 version = "0.1.0"
 description = "A project for evaluating LLM deployments"
-authors = ["Amaan amaan@codeverdict.ai", "Fahad fahadpatel1403@gmail.com"]
+authors = ["Amaan <amaan@codeverdict.ai>", "Fahad <fahadpatel1403@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
